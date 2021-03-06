@@ -1,0 +1,123 @@
+a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
+a:hover, button:hover {
+  color: blue;
+  background-color: orange;
+}
+
+.App {
+  width: 450px;
+  margin: 100px auto 0 auto;
+}
+
+.spinner {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+  
+.spinner-circle {
+  stroke: rgb(221, 56, 70);
+  stroke-width: 10%;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  border: 1px solid rgb(229, 203, 204);
+  border-radius: 5px;
+  background-color: rgb(247, 215, 218);
+}
+
+.error-text {
+  padding: 0.2em 0.5em;
+}
+
+.error-button {
+  padding: 0.4em 0.5em 0.5em 0.5em;
+  border-radius: 5px;
+  font: inherit;
+  color: white;
+  background-color: darkgray;
+}
+
+.List {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  list-style: none; 
+}
+
+.List-item:not(:first-child) {
+  border-top: 1px solid lightgray;
+}
+
+.List-item-link {
+  padding: 0.7em 1.5em;
+}
+
+.Details * {
+  display: block;
+  font: inherit;
+}
+
+.Details label {
+  margin-bottom: 1em;
+}
+
+.Details input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0.4em 1em 0.5em 1em;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.Details-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2em;
+}
+
+.Details-button {
+  padding: 0.4em 1em 0.5em 1em;
+  border: 1px solid lightgray;
+  border-radius: 5px; 
+  color: white;
+  background-color: darkgray;
+}
+
+
+
