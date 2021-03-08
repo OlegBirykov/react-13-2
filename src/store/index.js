@@ -1,28 +1,22 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import createSagaMiddleware from 'redux-saga';
 import listReducer from '../reducers/list';
 import detailsReducer from '../reducers/details';
-import { listRequestEpic, detailsRequestEpic } from '../epics';
+import saga from '../sagas';
 
 const reducer = combineReducers({
   list: listReducer,
-  details: detailsReducer,
+  details: detailsReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const epic = combineEpics(
-  listRequestEpic,
-  detailsRequestEpic,
-);
-
-const epicMiddleware = createEpicMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(reducer, composeEnhancers(
-  applyMiddleware(epicMiddleware)
+  applyMiddleware(sagaMiddleware)
 ));
 
-
-epicMiddleware.run(epic);
+sagaMiddleware.run(saga);
 
 export default store;
